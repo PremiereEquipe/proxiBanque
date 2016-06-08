@@ -8,8 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
@@ -44,25 +42,19 @@ public abstract class Compte implements Serializable {
 	
 	public abstract boolean debiterSolde(double montant);
 	
-	/*========================================================================*/
-    /*======================== ASSOCIATIONS ==================================*/
-    /*========================================================================*/
-    @OneToOne (mappedBy = "compte")
-    private Client client;
-	
 	/***************************************
 	 * Constructors
 	 */
-	public Compte() {
-
+	public Comptes() {
+		
 	}
-	public Compte(int numCompte, double solde, Date dateOuverture) {
+	public Comptes(int numCompte, double solde, Date dateOuverture) {
 		super();
 		this.numCompte = numCompte;
 		this.solde = solde;
 		this.dateOuverture = dateOuverture;
 	}
-	public Compte(int id, int numCompte, double solde, Date dateOuverture) {
+	public Comptes(int id, int numCompte, double solde, Date dateOuverture) {
 		super();
 		this.id = id;
 		this.numCompte = numCompte;
@@ -103,7 +95,7 @@ public abstract class Compte implements Serializable {
 	 */
 	@Override
 	public String toString() {
-		return "Compte [id=" + id + ", numCompte=" + numCompte + ", solde=" + solde + ", dateOuverture="
+		return "Comptes [id=" + id + ", numCompte=" + numCompte + ", solde=" + solde + ", dateOuverture="
 				+ dateOuverture + "]";
 	}
 

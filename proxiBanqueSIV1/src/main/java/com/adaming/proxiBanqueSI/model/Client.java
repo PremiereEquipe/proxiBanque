@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -37,12 +35,6 @@ public class Client {
 	@Column(name = "liste_comptes")
 	private List<Compte> listeComptes;
 	
-	/*========================================================================*/
-    /*======================== ASSOCIATIONS ==================================*/
-    /*========================================================================*/
-    @OneToOne
-    @JoinColumn(name = "compte_id", referencedColumnName ="id_compte")
-    private Compte compte;
 	
 	/* Constructeurs. */
 	public Client() {
