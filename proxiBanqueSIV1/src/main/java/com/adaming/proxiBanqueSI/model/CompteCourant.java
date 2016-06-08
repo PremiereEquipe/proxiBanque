@@ -1,4 +1,4 @@
-package com.adaming.proxiBanqueSI;
+package com.adaming.proxiBanqueSI.model;
 
 /**
  * Compte Courant, non remunere

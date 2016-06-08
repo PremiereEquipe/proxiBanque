@@ -1,4 +1,4 @@
-package com.adaming.proxiBanqueSI;
+package com.adaming.proxiBanqueSI.model;
 
 import java.sql.Date;
 
