@@ -7,10 +7,8 @@ import javax.faces.bean.RequestScoped;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.adaming.beanManage.ManagedProperty;
 import com.adaming.proxiBanqueSI.model.Client;
 import com.adaming.proxiBanqueSI.service.IBanqueService;
-import com.adaming.service.IVillesService;
 
 @ManagedBean(name="beanBanque")
 @RequestScoped
