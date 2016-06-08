@@ -6,7 +6,9 @@ package com.adaming.proxiBanqueSI.model;
  *
  */
 public class CompteEpargne extends Compte {
-	
+
+	private static final long serialVersionUID = 1L;
+
 	private double soldeMinimum;
 	
 	private double tauxRenumeration;

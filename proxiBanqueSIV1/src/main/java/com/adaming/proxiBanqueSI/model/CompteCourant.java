@@ -6,6 +6,8 @@ package com.adaming.proxiBanqueSI.model;
  *
  */
 public class CompteCourant extends Compte {
+
+	private static final long serialVersionUID = 1L;
 	
 	private double decouvertAuthorise;
 	
