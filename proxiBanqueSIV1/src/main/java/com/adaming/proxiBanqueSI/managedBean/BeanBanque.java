@@ -19,6 +19,7 @@ public class BeanBanque {
 	
 	@Autowired
 	private IBanqueService banqueService;
+	List<Client> listeClients;
 	
 	private Client client;
 	
@@ -28,7 +29,9 @@ public class BeanBanque {
 	 */
 	public List<Client> getListeClients(){
 		System.out.println("===== Entrée dans la méthode getListeClients de BeanBanque.java. =====");
-		return banqueService.getAllClients();
+		listeClients=banqueService.getAllClients();
+		System.out.println("===== Entrée dans la méthode getListeClients de BeanBanque.java. =====");
+		return listeClients;
 	}
 	
 	/**
@@ -58,4 +61,11 @@ public class BeanBanque {
 	public boolean virement (Compte compte1, Compte compte2, double montant) {
 		return banqueService.virement(compte1, compte2, montant);
 	}
+
+	public void setListeClients(List<Client> listeClients) {
+		this.listeClients = listeClients;
+	}
+	
+	
+	
 }

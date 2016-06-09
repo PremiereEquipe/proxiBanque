@@ -12,58 +12,60 @@
 
 	<h:form>
 		<p:dataTable value="#{beanBanque.listeClients}" 
-					 var="client">
+					 var="clients">
 					 
 			<p:column>
                 <f:facet name="header">
                     <h:outputText value="ID" />
                 </f:facet>
-                <h:outputText value="#{client.id}"/>
+                <h:outputText value="#{clients.client.id}"/>
             </p:column>
             
             <p:column>
                 <f:facet name="header">
                     <h:outputText value="Nom" />
                 </f:facet>
-                <h:outputText value="#{client.nom}"/>
+                <h:outputText value="#{clients.client.nom}"/>
             </p:column>
             
             <p:column>
                 <f:facet name="header">
                     <h:outputText value="Prénom" />
                 </f:facet>
-                <h:outputText value="#{client.prenom}"/>
+                <h:outputText value="#{clients.client.prenom}"/>
             </p:column>
             
             <p:column>
                 <f:facet name="header">
                     <h:outputText value="Adresse" />
                 </f:facet>
-                <h:outputText value="#{client.adresse}"/>
+                <h:outputText value="#{clients.client.adresse}"/>
             </p:column>
             
             <p:column>
                 <f:facet name="header">
                     <h:outputText value="Ville" />
                 </f:facet>
-                <h:outputText value="#{client.ville}"/>
+                <h:outputText value="#{clients.client.ville}"/>
             </p:column>
             
             <p:column>
                 <f:facet name="header">
                     <h:outputText value="Téléphone" />
                 </f:facet>
-                <h:outputText value="#{client.telephone}"/>
+                <h:outputText value="#{clients.client.telephone}"/>
             </p:column>
             
 		</p:dataTable>
-	</h:form>
-
-	<p:commandButton value="Ajouter Client" 
+		
+		<p:commandButton value="Ajouter Client" 
 					 id="addClient" 
 					 action="toAddClient" 
 					 actionListener="#{beanBanque.initClient}" 
 					 styleClass="ui-priority-primary" />
+	</h:form>
+
+	
 
 </body> 
 </html>
