@@ -30,7 +30,7 @@
     </navigation-rule>
     
     <navigation-rule>
-        <from-view-id>addClient.xhtml</from-view-id>
+        <from-view-id>/addClient.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>toListesClients</from-outcome>
             <to-view-id>/listesClient.xhtml</to-view-id>

@@ -10,11 +10,9 @@
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#addClient.xhtml" PATH="/addClient.xhtml"
-  SHAPE="256,33,0,0" model-entity="JSFProcessGroup"/>
- <PROCESS-ITEM NAME="rules:addClient.xhtml" PATH="addClient.xhtml"
-  SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:addClient.xhtml:0" NAME="item"
-   PATH="addClient.xhtml" model-entity="JSFProcessItem">
+  SHAPE="256,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#addClient.xhtml:0" NAME="item"
+   PATH="/addClient.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="toListesClients::#listesClient.xhtml"
     NAME="output" PATH="/listesClient.xhtml"
     TARGET="rules:#listesClient.xhtml" TITLE="toListesClients" model-entity="JSFProcessItemOutput"/>
