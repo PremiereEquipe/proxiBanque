@@ -20,6 +20,8 @@ public class BeanBanque {
 	@Autowired
 	private IBanqueService banqueService;
 	
+	private Client client;
+	
 	/**
 	 * Récupération de la liste des clients du conseiller clientèle.
 	 * @return
@@ -35,6 +37,13 @@ public class BeanBanque {
 	 */
 	public void ajouterClient (Client pClient) {
 		banqueService.addClient(pClient);
+	}
+	
+	/**
+	 * Creer un nouveau client
+	 */
+	public void initClient(){
+		client = new Client();
 	}
 	
 	/**
