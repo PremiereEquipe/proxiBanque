@@ -23,14 +23,18 @@ public class BeanBanque {
 	
 	private Client client;
 	
+	public BeanBanque() {
+		System.out.println("===> MB : constructor");
+	}
+	
 	/**
 	 * Récupération de la liste des clients du conseiller clientèle.
 	 * @return
 	 */
 	public List<Client> getListeClients(){
-		System.out.println("===== Entrée dans la méthode getListeClients de BeanBanque.java. =====");
+		System.out.println("===> MB : getListeClients");
 		listeClients=banqueService.getAllClients();
-		System.out.println("===== Entrée dans la méthode getListeClients de BeanBanque.java. =====");
+		System.out.println("===> MB : getListeClients, out");
 		return listeClients;
 	}
 	
@@ -39,6 +43,7 @@ public class BeanBanque {
 	 * @param pClient
 	 */
 	public void ajouterClient (Client pClient) {
+		System.out.println("===> MB : ajout client " + pClient);
 		banqueService.addClient(pClient);
 	}
 	
@@ -46,6 +51,7 @@ public class BeanBanque {
 	 * Creer un nouveau client
 	 */
 	public void initClient(){
+		System.out.println("===> MB : init client");
 		client = new Client();
 	}
 	
@@ -58,8 +64,8 @@ public class BeanBanque {
 //		banqueService.getClientById(pId);
 //	}
 	
-	public boolean virement (Compte compte1, Compte compte2, double montant) {
-		return banqueService.virement(compte1, compte2, montant);
+	public boolean virement (String numClientDebite, String numClientCredite, double montant) {
+		return banqueService.virement(numClientDebite, numClientCredite, montant);
 	}
 
 	public void setListeClients(List<Client> listeClients) {

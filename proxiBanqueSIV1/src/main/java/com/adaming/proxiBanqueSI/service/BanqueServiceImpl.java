@@ -40,8 +40,10 @@ public class BanqueServiceImpl implements IBanqueService, Serializable{
 	/**
 	 * Virement. Renvoie vrai s'il s'est bien passé, faux sinon.
 	 */
-	public boolean virement(Client client1, Client client2, double montant) {
-		return clientDAO.virement(client1, client2, montant);
+	public boolean virement(String numClientDebite, String numClientCredite, double montant) {
+		//clientDAO.updateClient(pClient);
+		System.out.println("====> Service : methode virement a faire");
+		return false;
 	}
 	
 }
