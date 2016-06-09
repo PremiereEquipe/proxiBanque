@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.adaming.proxiBanqueSI.model.Client;
 
-import fr.adaming.bo.Employe;
 
 
 
@@ -52,6 +51,62 @@ public class ClientDaoImpl implements IClientDao {
 		List<Client> clientList = query.list();
 		
 		return clientList;
+	}
+
+	public void updateClient(Client pClient) {
+		Session session = sessionFactory.openSession();
+		
+		String hqlUpdate = "IPDATE Client SET "
+				+ " nom = :cNom, "
+				+ " prenom = :cPrenom, "
+				+ " adresse= :cAdresse, "
+				+ " code_postal= :cCodePosta, "
+				+ "	ville= :cVille, "
+				+ " telephone= :cTelephone, "
+				+ " liste_comptes= :cListeComptes " 
+				+ " WHERE id= :cID";
+		Query query = session.createQuery(hqlUpdate);
+		query.setParameter("cNom", pClient.getNom());
+		query.setParameter("cPrenom", pClient.getPrenom());
+		query.setParameter("cAdresse", pClient.getAdresse());
+		query.setParameter("cCodePosta", pClient.getCodePostal());
+		query.setParameter("cVille", pClient.getVille());
+		query.setParameter("cTelephone", pClient.getTelephone());
+		query.setParameter("cListeComptes", pClient.getListeComptes());
+		query.setParameter("cID", pClient.getId());
+		
+		query.executeUpdate();
+		
+//		int result = query.executeUpdate();
+//		System.out.println("Nombre d'employe MAJ : =================> " + result);
+		
+	}
+
+	public void deleteClient(Client pClient) {
+		Session session = sessionFactory.openSession();
+//		session.delete(pClient);
+		
+		String hqlDelete = "DELETE FROM Client c WHERE c.id= :cID";
+		
+		Query query = session.createQuery(hqlDelete);
+		query.setParameter("cID",pClient.getId());
+		query.executeUpdate();
+		
+		//int result = query.executeUpdate();
+		//System.out.println("Nombre de Clients supprimes : =================> " + result);
+				
+	}
+
+	public Client getClientById(int idClient) {
+		Session session = sessionFactory.openSession();
+
+		String hqlReq = "FROM Employe WHERE id= :employeID";
+		Query query = session.createQuery(hqlReq);
+		query.setParameter("employeID", idClient);
+		@SuppressWarnings ("unchecked")
+		List<Client> clientList = query.list();
+		
+		return clientList.get(0);
 	}
 	
 

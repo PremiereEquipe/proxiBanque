@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -15,7 +17,7 @@ import javax.persistence.Table;
 public class Client {
 	
 	
-	/* Paramètres. */
+	/* Paramï¿½tres. */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_client", nullable = false)
@@ -35,6 +37,21 @@ public class Client {
 	@Column(name = "liste_comptes")
 	private List<Compte> listeComptes;
 	
+    /*========================================================================*/
+    /*======================== ASSOCIATIONS ==================================*/
+    /*========================================================================*/
+    @OneToOne
+    @JoinColumn(name = "compte_id", referencedColumnName ="id_compte")
+    private Compte compte;
+    
+    public Compte getCompte() {
+        return compte;
+    }
+    
+    public void setCompte(Compte compte) {
+        this.compte = compte;
+    }
+    
 	
 	/* Constructeurs. */
 	public Client() {
