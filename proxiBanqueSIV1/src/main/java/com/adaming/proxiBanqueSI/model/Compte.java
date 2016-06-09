@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -46,7 +48,8 @@ public abstract class Compte implements Serializable {
     /*========================================================================*/
     /*======================== ASSOCIATIONS ==================================*/
     /*========================================================================*/
-    @OneToOne (mappedBy = "compte")
+    @ManyToOne
+    @JoinColumn(name = "client_id", referencedColumnName ="id_client")
     private Client client;
     
     public Client getClient() {

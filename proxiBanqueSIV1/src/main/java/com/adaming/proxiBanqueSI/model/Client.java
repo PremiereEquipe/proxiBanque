@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -40,8 +41,7 @@ public class Client {
     /*========================================================================*/
     /*======================== ASSOCIATIONS ==================================*/
     /*========================================================================*/
-    @OneToOne
-    @JoinColumn(name = "compte_id", referencedColumnName ="id_compte")
+	@OneToMany(mappedBy = "client")
     private Compte compte;
     
     public Compte getCompte() {
