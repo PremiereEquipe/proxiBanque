@@ -1,5 +1,6 @@
 package com.adaming.proxiBanqueSI.managedBean;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -13,7 +14,7 @@ import com.adaming.proxiBanqueSI.service.IBanqueService;
 
 @ManagedBean(name="beanBanque")
 @RequestScoped
-public class BeanBanque {
+public class BeanBanque implements Serializable{
 
 	private static final long SerialVersionUID = 1L;
 	
