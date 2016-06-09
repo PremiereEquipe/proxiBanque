@@ -19,7 +19,7 @@ public class BeanBanque {
 	
 	@Autowired
 	private IBanqueService banqueService;
-	List<Client> listeClients;
+	List<Client> listeClients=null;
 	
 	private Client client;
 	
