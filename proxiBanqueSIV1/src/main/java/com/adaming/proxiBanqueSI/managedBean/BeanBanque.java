@@ -19,7 +19,29 @@ public class BeanBanque {
 	@Autowired
 	private IBanqueService banqueService;
 	
+	/**
+	 * Récupération de la liste des clients du conseiller clientèle.
+	 * @return
+	 */
 	public List<Client> getListeClients(){
 		return banqueService.getAllClients();
 	}
+	
+	/**
+	 * Ajout d'un client.
+	 * @param pClient
+	 */
+	public void ajouterClient (Client pClient) {
+		banqueService.addClient(pClient);
+	}
+	
+	/**
+	 * Récupération d'un client par son identifiant.
+	 * @param pId
+	 * @return
+	 */
+	public Client recupererClient (int pId) {
+		banqueService.getClientById(pId);
+	}
+	
 }

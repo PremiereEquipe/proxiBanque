@@ -7,4 +7,5 @@ import com.adaming.proxiBanqueSI.model.Client;
 public interface IBanqueService {
 
 	public List<Client> getAllClients();
+	public void addClient (Client pClient);
 }

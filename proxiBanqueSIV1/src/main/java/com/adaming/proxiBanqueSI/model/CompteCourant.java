@@ -1,5 +1,7 @@
 package com.adaming.proxiBanqueSI.model;
 
+import javax.persistence.Column;
+
 /**
  * Compte Courant, non remunere
  * @author INTI-0213
@@ -9,11 +11,15 @@ public class CompteCourant extends Compte {
 
 	private static final long serialVersionUID = 1L;
 	
+	@Column(name="type")
+	private String type;
+	
 	private double decouvertAuthorise;
 	
 	public CompteCourant() {
 		super();
 		decouvertAuthorise = -500;
+		type = "courant";
 	}
 	
 	/**

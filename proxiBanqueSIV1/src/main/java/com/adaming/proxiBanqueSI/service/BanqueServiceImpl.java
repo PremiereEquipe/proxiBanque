@@ -21,7 +21,20 @@ public class BanqueServiceImpl implements IBanqueService, Serializable{
 	 */
 	public List<Client> getAllClients() {
 		
-		return clientDAO.getAllClients();
+		return clientDAO.getAllClient();
 	}
 
+	public void addClient (Client pClient) {
+		clientDAO.addClient(pClient);
+	}
+	
+	/**
+	 * R�cup�ration d'un client par son identifiant.
+	 * @param pId
+	 * @return
+	 */
+	public Client getClientById (int pId) {
+		return clientDAO.getClientById(pId);
+	}
+	
 }

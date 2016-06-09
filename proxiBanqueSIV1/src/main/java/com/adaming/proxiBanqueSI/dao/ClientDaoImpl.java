@@ -11,8 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.adaming.proxiBanqueSI.model.Client;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> branch 'master' of https://github.com/PremiereEquipe/proxiBanque.git
 
 @Repository
 @Transactional

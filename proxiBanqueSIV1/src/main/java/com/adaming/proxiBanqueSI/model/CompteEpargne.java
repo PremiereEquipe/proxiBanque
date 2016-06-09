@@ -9,6 +9,8 @@ public class CompteEpargne extends Compte {
 
 	private static final long serialVersionUID = 1L;
 
+	private String type;
+	
 	private double soldeMinimum;
 	
 	private double tauxRenumeration;
@@ -20,6 +22,7 @@ public class CompteEpargne extends Compte {
 		super();
 		soldeMinimum = 0;
 		tauxRenumeration = 0.3;
+		type = "epargne";
 	}
 	
 	/**
