@@ -20,5 +20,21 @@
             <supported-locale>us</supported-locale>
         </locale-config>
 	</application>
+	
+	<navigation-rule>
+        <from-view-id>/listesClients.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>toAddClient</from-outcome>
+            <to-view-id>/addClient.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <navigation-rule>
+        <from-view-id>addClient.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>toListesClients</from-outcome>
+            <to-view-id>/listesClient.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 
 </faces-config>
