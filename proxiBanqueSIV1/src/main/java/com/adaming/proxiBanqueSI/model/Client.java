@@ -35,7 +35,6 @@ public class Client {
 	private String ville;
 	@Column(name = "telephone")
 	private String telephone;
-	@Column(name = "liste_comptes")
 	private List<Compte> listeComptes;
 	
     /*========================================================================*/
