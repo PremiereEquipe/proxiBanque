@@ -21,6 +21,12 @@
         </locale-config>
 	</application>
 	
+<!-- 	<managed-bean> -->
+<!-- 	  <managed-bean-name>beanBanque</managed-bean-name> -->
+<!-- 	  <managed-bean-class>com.adaming.proxiBanqueSI.managedBean.BeanBanque</managed-bean-class> -->
+<!-- 	  <managed-bean-scope>session</managed-bean-scope> -->
+<!--      </managed-bean> -->
+	
 	<navigation-rule>
         <from-view-id>/listesClients.xhtml</from-view-id>
         <navigation-case>

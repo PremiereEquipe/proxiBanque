@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,7 +16,7 @@ import com.adaming.proxiBanqueSI.service.IBanqueService;
 @RequestScoped
 public class BeanBanque implements Serializable{
 
-	private static final long SerialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 	
 	@Autowired
 	private IBanqueService banqueService;
@@ -56,16 +56,7 @@ public class BeanBanque implements Serializable{
 		client = new Client();
 	}
 	
-	/**
-	 * Récupération d'un client par son identifiant.
-	 * @param pId
-	 * @return
-	 */
-//	public Client recupererClient (int pId) {
-//		banqueService.getClientById(pId);
-//	}
-	
-	public boolean virement (String numClientDebite, String numClientCredite, double montant) {
+	public boolean virement(String numClientDebite, String numClientCredite, double montant) {
 		return banqueService.virement(numClientDebite, numClientCredite, montant);
 	}
 
