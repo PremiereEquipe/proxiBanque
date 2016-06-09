@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head></h:head> 
+<body> 
+<h:form>
+    <p:panel id="panel" header="New Client">
+ 
+<!--         <p:messages id="msgs" /> -->
+ 
+        <h:panelGrid columns="3" cellpadding="5">
+        
+            <p:outputLabel for="nom" value="Nom :" />
+            <p:inputText id="nom" 
+            			 value="#{beanBanque.client.nom}" 
+            			 required="true" 
+            			 label="nom">
+                <f:validateLength minimum="2" />
+            </p:inputText>
+ 
+            <p:outputLabel for="prenom" value="Prenom :" />
+            <p:inputText id="lastname" 
+            			 value="#{beanBanque.client.prenom}" 
+            			 label="prenom" 
+            			 required="true">
+                <f:validateLength minimum="2" />
+            </p:inputText>
+ 
+        </h:panelGrid>
+ 
+        <p:commandButton value="Save" 
+        			     update="panel" 
+        			     actionListener="#{beanBanque.ajouterClient}" 
+        			     icon="ui-icon-check" />
+    </p:panel>
+</h:form>
+</body> 
+</html>
