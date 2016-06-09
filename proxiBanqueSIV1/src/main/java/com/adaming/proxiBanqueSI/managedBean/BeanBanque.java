@@ -8,6 +8,7 @@ import javax.faces.bean.RequestScoped;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.adaming.proxiBanqueSI.model.Client;
+import com.adaming.proxiBanqueSI.model.Compte;
 import com.adaming.proxiBanqueSI.service.IBanqueService;
 
 @ManagedBean(name="beanBanque")
@@ -44,4 +45,20 @@ public class BeanBanque {
 		banqueService.getClientById(pId);
 	}
 	
+	public boolean virement (Compte compte1, Compte compte2, double montant) {
+		
+		double nouveauSoldeCompte1 = compte1.getSolde() - montant;
+		double decouvertMax = 
+		
+		if ()
+			return false;
+		else {
+			banqueService.debiter(compte1, montant);
+			banqueService.crediter(compte2, montant);
+			return true;
+		}
+			
+		
+		
+	}
 }

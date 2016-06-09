@@ -14,11 +14,11 @@ public class CompteCourant extends Compte {
 	@Column(name="type")
 	private String type;
 	
-	private double decouvertAuthorise;
+	private double decouvertAutorise;
 	
 	public CompteCourant() {
 		super();
-		decouvertAuthorise = -500;
+		decouvertAutorise = -500;
 		type = "courant";
 	}
 	
@@ -29,7 +29,7 @@ public class CompteCourant extends Compte {
 	@Override
 	public boolean debiterSolde(double montant) {
 		double soldePotentiel = getSolde() - montant;
-		if (soldePotentiel >= decouvertAuthorise){
+		if (soldePotentiel >= decouvertAutorise){
 			setSolde(soldePotentiel);
 			return true;
 		} else {
@@ -40,12 +40,12 @@ public class CompteCourant extends Compte {
 	/**
 	 * GETTERS and SETTERS
 	 */
-	public double getDecouvertAuthorise() {
-		return decouvertAuthorise;
+	public double getDecouvertAutorise() {
+		return decouvertAutorise;
 	}
 
-	public void setDecouvertAuthorise(double decouvertAuthorise) {
-		this.decouvertAuthorise = decouvertAuthorise;
+	public void setDecouvertAuthorise(double decouvertAutorise) {
+		this.decouvertAutorise = decouvertAutorise;
 	}
 	
 	
