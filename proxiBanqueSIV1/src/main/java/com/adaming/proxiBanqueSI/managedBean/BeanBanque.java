@@ -40,8 +40,8 @@ public class BeanBanque {
 	 * @param pId
 	 * @return
 	 */
-	public Client recupererClient (int pId) {
-		banqueService.getClientById(pId);
-	}
+//	public Client recupererClient (int pId) {
+//		banqueService.getClientById(pId);
+//	}
 	
 }
