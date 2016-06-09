@@ -22,6 +22,7 @@ public class CompteCourant extends Compte {
 		type = "courant";
 	}
 	
+	
 	/**
 	 * Debite le compte si le solde reste au dessus du decouvert authorise.
 	 */
