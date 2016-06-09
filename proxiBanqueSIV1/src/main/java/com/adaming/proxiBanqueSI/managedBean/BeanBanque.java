@@ -25,6 +25,7 @@ public class BeanBanque {
 	 * @return
 	 */
 	public List<Client> getListeClients(){
+		System.out.println("===== Entrée dans la méthode getListeClients de BeanBanque.java. =====");
 		return banqueService.getAllClients();
 	}
 	

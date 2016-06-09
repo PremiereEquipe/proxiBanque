@@ -20,7 +20,7 @@ public class BanqueServiceImpl implements IBanqueService, Serializable{
 	 * Return a list of all the clients in the DB.
 	 */
 	public List<Client> getAllClients() {
-		
+		System.out.println("===== Entrée dans la méthode getAllClients de BanqueServiceImpl.java. =====");
 		return clientDAO.getAllClient();
 	}
 
