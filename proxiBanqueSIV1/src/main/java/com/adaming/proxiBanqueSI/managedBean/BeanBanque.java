@@ -19,7 +19,7 @@ public class BeanBanque {
 	
 	@Autowired
 	private IBanqueService banqueService;
-	List<Client> listeClients;
+	List<Client> listeClients=null;
 	
 	/**
 	 * Récupération de la liste des clients du conseiller clientèle.
