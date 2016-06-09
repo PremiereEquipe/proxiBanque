@@ -1,5 +1,7 @@
 package com.adaming.proxiBanqueSI.dao;
 
+import java.util.List;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -7,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.adaming.proxiBanqueSI.model.Client;
 import com.adaming.proxiBanqueSI.model.Compte;
 
 @Repository
@@ -20,34 +23,22 @@ public class CompteDaoImpl implements ICompteDao {
 	 * Met a jour le solde du compte
 	 */
 	@Transactional(readOnly=false)
-	public boolean updateCompte(int idCompte, double montant) {
-		
+	public boolean updateCompte(int idCompte, double nouveauSolde) {
 		System.out.println("====> DAO : update solde");
 		
 		Session session = sessionFactory.openSession();
 		
-		String hqlUpdate = "IPDATE Client SET "
-				+ " nom = :cNom, "
-				+ " prenom = :cPrenom, "
-				+ " adresse= :cAdresse, "
-				+ " code_postal= :cCodePosta, "
-				+ "	ville= :cVille, "
-				+ " telephone= :cTelephone, "
-				+ " liste_comptes= :cListeComptes " 
+		String hqlUpdate = "UPDATE Compte SET "
+				+ " solde = :cSolde " 
 				+ " WHERE id= :cID";
 		Query query = session.createQuery(hqlUpdate);
-		query.setParameter("cNom", pClient.getNom());
-		query.setParameter("cPrenom", pClient.getPrenom());
-		query.setParameter("cAdresse", pClient.getAdresse());
-		query.setParameter("cCodePosta", pClient.getCodePostal());
-		query.setParameter("cVille", pClient.getVille());
-		query.setParameter("cTelephone", pClient.getTelephone());
-		query.setParameter("cListeComptes", pClient.getListeComptes());
-		query.setParameter("cID", pClient.getId());
+		query.setParameter("cSolde", nouveauSolde);
+		query.setParameter("cID", idCompte);
 		
-		query.executeUpdate();
+		int result = query.executeUpdate();
+		System.out.println("====> DAO update compte : " + result);
 		
-		return false;
+		return true;
 	}
 
 	/**
@@ -56,8 +47,17 @@ public class CompteDaoImpl implements ICompteDao {
 	 */
 	@Transactional(readOnly=true)
 	public Compte getCompteByNum(String numCompte) {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("====> DAO : get compte numero : " + numCompte);
+		
+		Session session = sessionFactory.openSession();
+
+		String hqlReq = "FROM Compte WHERE numero_compte= :cNum";
+		Query query = session.createQuery(hqlReq);
+		query.setParameter("cNum", numCompte);
+		@SuppressWarnings ("unchecked")
+		List<Compte> compteList = query.list();
+		
+		return compteList.get(0);
 	}
 
 	/**
@@ -66,8 +66,17 @@ public class CompteDaoImpl implements ICompteDao {
 	 */
 	@Transactional(readOnly=true)
 	public Compte getCompteById(int idCompte) {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("====> DAO : get compte id#" + idCompte);
+		
+		Session session = sessionFactory.openSession();
+
+		String hqlReq = "FROM Compte WHERE id= :cID";
+		Query query = session.createQuery(hqlReq);
+		query.setParameter("cID", idCompte);
+		@SuppressWarnings ("unchecked")
+		List<Compte> compteList = query.list();
+		
+		return compteList.get(0);
 	}
 
 
