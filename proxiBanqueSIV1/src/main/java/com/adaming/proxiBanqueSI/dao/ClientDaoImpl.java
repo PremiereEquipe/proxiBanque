@@ -35,6 +35,7 @@ public class ClientDaoImpl implements IClientDao {
 	
 	@Transactional(readOnly = true)
 	public List<Client> getAllClient() {
+		System.out.println("====> DAO : get all client");
 		Session session = sessionFactory.openSession();
 		
 		

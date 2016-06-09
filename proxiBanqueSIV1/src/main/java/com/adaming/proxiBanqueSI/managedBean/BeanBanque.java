@@ -46,19 +46,6 @@ public class BeanBanque {
 	}
 	
 	public boolean virement (Compte compte1, Compte compte2, double montant) {
-		
-		double nouveauSoldeCompte1 = compte1.getSolde() - montant;
-		double decouvertMax = 
-		
-		if ()
-			return false;
-		else {
-			banqueService.debiter(compte1, montant);
-			banqueService.crediter(compte2, montant);
-			return true;
-		}
-			
-		
-		
+		return banqueService.virement(compte1, compte2, montant);
 	}
 }

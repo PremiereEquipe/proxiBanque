@@ -29,12 +29,19 @@ public class BanqueServiceImpl implements IBanqueService, Serializable{
 	}
 	
 	/**
-	 * Rï¿½cupï¿½ration d'un client par son identifiant.
+	 * Récupération d'un client par son identifiant.
 	 * @param pId
 	 * @return
 	 */
 	public Client getClientById (int pId) {
 		return clientDAO.getClientById(pId);
+	}
+
+	/**
+	 * Virement. Renvoie vrai s'il s'est bien passé, faux sinon.
+	 */
+	public boolean virement(Client client1, Client client2, double montant) {
+		return clientDAO.virement(client1, client2, montant);
 	}
 	
 }
