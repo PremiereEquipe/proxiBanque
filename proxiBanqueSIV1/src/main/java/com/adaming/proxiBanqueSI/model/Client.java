@@ -35,7 +35,6 @@ public class Client {
 	private String ville;
 	@Column(name = "telephone")
 	private String telephone;
-	private List<Compte> listeComptes;
 	
     /*========================================================================*/
     /*======================== ASSOCIATIONS ==================================*/
@@ -56,8 +55,7 @@ public class Client {
 	public Client() {
 		super();
 	}
-	public Client(String nom, String prenom, String adresse, int codePostal, String ville, String telephone,
-			List<Compte> listeComptes) {
+	public Client(String nom, String prenom, String adresse, int codePostal, String ville, String telephone) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -65,10 +63,8 @@ public class Client {
 		this.codePostal = codePostal;
 		this.ville = ville;
 		this.telephone = telephone;
-		this.listeComptes = listeComptes;
 	}
-	public Client(int id, String nom, String prenom, String adresse, int codePostal, String ville, String telephone,
-			List<Compte> listeComptes) {
+	public Client(int id, String nom, String prenom, String adresse, int codePostal, String ville, String telephone) {
 		super();
 		this.id = id;
 		this.nom = nom;
@@ -77,7 +73,6 @@ public class Client {
 		this.codePostal = codePostal;
 		this.ville = ville;
 		this.telephone = telephone;
-		this.listeComptes = listeComptes;
 	}
 	
 
@@ -123,11 +118,5 @@ public class Client {
 	}
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
-	}
-	public List<Compte> getListeComptes() {
-		return listeComptes;
-	}
-	public void setListeComptes(List<Compte> listeComptes) {
-		this.listeComptes = listeComptes;
 	}
 }

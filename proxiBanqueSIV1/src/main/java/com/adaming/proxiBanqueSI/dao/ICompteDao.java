@@ -4,5 +4,9 @@ import com.adaming.proxiBanqueSI.model.Compte;
 
 public interface ICompteDao {
 
-	public boolean virement (Compte compte1, Compte compte2, double montant);
+	public boolean updateCompte (int idCompte, double montant);
+	
+	public Compte getCompteByNum (String numCompte);
+	
+	public Compte getCompteById (int idCompte);
 }

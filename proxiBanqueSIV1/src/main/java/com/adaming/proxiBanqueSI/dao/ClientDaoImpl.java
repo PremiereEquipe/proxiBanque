@@ -55,14 +55,13 @@ public class ClientDaoImpl implements IClientDao {
 	public void updateClient(Client pClient) {
 		Session session = sessionFactory.openSession();
 		
-		String hqlUpdate = "IPDATE Client SET "
+		String hqlUpdate = "UPDATE Client SET "
 				+ " nom = :cNom, "
 				+ " prenom = :cPrenom, "
 				+ " adresse= :cAdresse, "
 				+ " code_postal= :cCodePosta, "
 				+ "	ville= :cVille, "
-				+ " telephone= :cTelephone, "
-				+ " liste_comptes= :cListeComptes " 
+				+ " telephone= :cTelephone "
 				+ " WHERE id= :cID";
 		Query query = session.createQuery(hqlUpdate);
 		query.setParameter("cNom", pClient.getNom());
@@ -71,13 +70,10 @@ public class ClientDaoImpl implements IClientDao {
 		query.setParameter("cCodePosta", pClient.getCodePostal());
 		query.setParameter("cVille", pClient.getVille());
 		query.setParameter("cTelephone", pClient.getTelephone());
-		query.setParameter("cListeComptes", pClient.getListeComptes());
 		query.setParameter("cID", pClient.getId());
 		
-		query.executeUpdate();
-		
-//		int result = query.executeUpdate();
-//		System.out.println("Nombre d'employe MAJ : =================> " + result);
+		int result = query.executeUpdate();
+		System.out.println("====> DAO update client : " + result);
 		
 	}
 
