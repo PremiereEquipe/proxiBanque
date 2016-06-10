@@ -7,13 +7,16 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import com.adaming.proxiBanqueSI.model.Client;
 import com.adaming.proxiBanqueSI.model.Compte;
 import com.adaming.proxiBanqueSI.service.IBanqueService;
 
+//@Component
 @ManagedBean(name="beanBanque")
-@RequestScoped
+@SessionScoped
 public class BeanBanque implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -24,8 +27,12 @@ public class BeanBanque implements Serializable{
 	
 	private Client client;
 	
+	/**
+	 * ctor
+	 */
 	public BeanBanque() {
 		System.out.println("===> MB : constructor");
+		client = new Client();
 	}
 	
 	/**
